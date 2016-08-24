@@ -13,12 +13,12 @@ import Toolbar from "../../components/toolbar/Toolbar";
 
 export default class Home extends Component {
     open() {
-        AppEventEmitter.emit('hamburger.click');icon
+        AppEventEmitter.emit('hamburger.click'); //icon
     }
     render() {
         return (
             <View style={home.color}>
-                <Toolbar name='Shop' searchButton={true} />
+                <Toolbar name='Shop' searchButton={true} layoutButton={true} gridButton={true} heartButton={true}/>
 
                 <View style={[home.search]}>
                     <TextInput
