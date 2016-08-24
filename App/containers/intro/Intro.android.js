@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {Text, View, Platform, Dimensions, Image, TouchableOpacity, TextInput} from "react-native";
 import AppIntro from "react-native-app-intro";
-import intro from "./../Styles/intro";
+import intro from "../../styles/intro";
 import {Actions} from "react-native-router-flux";
 import Icon from "react-native-vector-icons/Ionicons";
 

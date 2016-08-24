@@ -16,7 +16,7 @@ import {Actions} from "react-native-router-flux";
 import ScrollableTabView, {ScrollableTabBar} from "react-native-scrollable-tab-view";
 import SignIn from "./SignIn";
 import SignUp from "./SignUp";
-import css from "./../Styles/style";
+import css from "../../styles/style";
 
 export default class Login extends Component {
     constructor(props) {

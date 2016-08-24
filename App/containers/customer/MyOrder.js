@@ -2,10 +2,10 @@
 
 import React, {Component} from "react";
 import {ListView, Text, View, Image, TouchableOpacity, ScrollView, StyleSheet} from "react-native";
-import order from "./../Styles/myorder";
+import order from "../../styles/myorder";
 import {Actions} from "react-native-router-flux";
-import Toolbar from "./../Controls/Toolbar";
-import button from "./../Styles/button";
+import Toolbar from "../../components/toolbar/Toolbar";
+import button from "../../styles/button";
 
 export default class MyOrder extends Component {
     render() {

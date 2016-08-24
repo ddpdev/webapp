@@ -13,9 +13,9 @@ import {
     DeviceEventEmitter
 } from "react-native";
 import {Actions} from "react-native-router-flux";
-import login from "./../Styles/login";
-import ButtonRoundBlue from "./../Controls/ButtonRoundBlue";
-import IconInput from './../Controls/IconInput';
+import login from "../../styles/login";
+import ButtonRoundBlue from "../../components/common/ButtonRoundBlue";
+import IconInput from '../../components/common/IconInput';
 
 export default class SignIn extends Component {
     constructor(props) {

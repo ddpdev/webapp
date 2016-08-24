@@ -2,7 +2,7 @@
 
 import React, {Component} from "react";
 import {ListView, Text, View, Image, TouchableOpacity, ScrollView, TextInput} from "react-native";
-import shipping from "./../Styles/shipping";
+import shipping from "../../styles/shipping";
 import {Actions} from "react-native-router-flux";
 
 export default class Payment extends Component {

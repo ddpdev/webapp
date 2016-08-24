@@ -2,7 +2,7 @@
 
 import React, {Component} from "react";
 import {ListView, Text, View, Image, TouchableOpacity, ScrollView, TextInput} from "react-native";
-import order from "./../Styles/order";
+import order from "../../styles/order";
 import {Actions} from "react-native-router-flux";
 
 export default class Confirm extends Component {

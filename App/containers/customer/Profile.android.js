@@ -5,10 +5,10 @@ import {ListView, Text, View, Image, TabBarIOS, TouchableOpacity, ScrollView, St
 import {Actions} from "react-native-router-flux";
 import Notification from "./Notification";
 import MyOrder from "./MyOrder";
-import TrackOrder from "./TrackOrder";
+import TrackOrder from "../order/TrackOrder";
 import WishList from "./WishList";
 import ScrollableTabView, {ScrollableTabBar} from "react-native-scrollable-tab-view";
-import FacebookTabBar from "./../Custom/FacebookTabBar";
+import FacebookTabBar from "../../components/toolbar/FacebookTabBar";
 
 export default class Profile extends Component {
     constructor(props) {

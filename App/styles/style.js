@@ -81,6 +81,10 @@ export default StyleSheet.create({
         "width": 18,
         "height": 18
     },
+    "imageIconBig": {
+        "width": 24,
+        "height": 24
+    },
     "iconHome": {
         "width": 20,
         "marginLeft": -4

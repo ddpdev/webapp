@@ -6,7 +6,7 @@ import {Actions} from "react-native-router-flux";
 import {ScrollableTabBar} from "react-native-scrollable-tab-view";
 import Notification from "./Notification";
 import MyOrder from "./MyOrder";
-import TrackOrder from "./TrackOrder";
+import TrackOrder from "../order/TrackOrder";
 import WishList from "./WishList";
 
 

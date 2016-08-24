@@ -3,11 +3,24 @@
 import React, {Component} from "react";
 import {Navigator, Text, View, Alert} from "react-native";
 import {Scene, Router, Schema, Actions, Animations, TabBar} from "react-native-router-flux";
+import Drawer from "react-native-drawer";
 
+import AppEventEmitter from "../../utils/AppEventEmitter";
 import SideMenu from "../../components/sidemenu/SideMenu";
 import Home from "../home/Home";
-import AppEventEmitter from "../../utils/AppEventEmitter";
-import Drawer from "react-native-drawer";
+import Product from "../product/Product";
+import ProductDetails from "../product/ProductDetails";
+import ProductGrid from "../product/ProductGrid";
+import Cart from "../customer/Cart";
+import WishList from "../customer/WishList";
+import MyOrder from "../customer/MyOrder";
+import Profile from "../customer/Profile";
+import Notification from "../customer/Notification";
+import TrackOrder from "../order/TrackOrder";
+import Complete from "../order/Complete";
+import Intro from "../intro/Intro";
+import Login from "../login/Login";
+
 
 export default class RootRouter extends Component {
     componentDidMount() {
@@ -44,7 +57,19 @@ export default class RootRouter extends Component {
     render() {
         const scenes = Actions.create(
             <Scene key="scene">
-                <Scene key="home" component={Home} title="Home"  initial={true}  />
+              <Scene key="intro" component={Intro} />
+              <Scene key="login" component={Login}/>
+              <Scene key="home" component={Home} title="Home"  initial={true}  />
+              <Scene key="product" component={Product} title="Product"    />
+              <Scene key="productgrid" component={ProductGrid} title="ProductGrid" />
+              <Scene key="productdetails"  component={ProductDetails} title="ProductDetails"  />
+              <Scene key="cart" component={Cart} title="Cart" />
+              <Scene key="wishlist" component={WishList} title="WishList" />
+              <Scene key="myorder" component={MyOrder} title="MyOrder"   />
+              <Scene key="profile" component={Profile} title="Profile" />
+              <Scene key="notification" component={Notification} title="Notification" />
+              <Scene key="trackorder" component={TrackOrder} title="TrackOrder" />
+              <Scene key="complete" component={Complete} title="Complete"/>
             </Scene>
         );
 

@@ -12,19 +12,19 @@ import {
     ScrollView,
     StyleSheet
 } from "react-native";
-import shipping from "./../Styles/shipping";
-import Shipping from "./Shipping";
-import Payment from "./Payment";
-import Confirm from "./Confirm";
+import shipping from "../../styles/shipping";
+import Shipping from "../order/Shipping";
+import Payment from "../order/Payment";
+import Confirm from "../order/Confirm";
 
 import {Actions} from "react-native-router-flux";
-import Toolbar from "./../Controls/Toolbar";
+import Toolbar from "../../components/toolbar/Toolbar";
 import ScrollableTabView, {ScrollableTabBar} from "react-native-scrollable-tab-view";
 
-import ButtonRoundBlue from "./../Controls/ButtonRoundBlue";
-import ButtonRound from "./../Controls/ButtonRound";
-import ProgressBar from "./../Custom/ProgressBar";
-import css from "./../Styles/style";
+import ButtonRoundBlue from "../../components/common/ButtonRoundBlue";
+import ButtonRound from "../../components/common/ButtonRound";
+import ProgressBar from "../../components/toolbar/ProgressBar";
+import css from "../../styles/style";
 
 export default class Checkout extends Component {
     constructor(props) {

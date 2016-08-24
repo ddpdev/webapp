@@ -2,7 +2,7 @@
 
 import React, {Component} from "react";
 import {Text, View, Image, ListView, TouchableOpacity, ScrollView} from "react-native";
-import track from "./../Styles/trackorder";
+import track from "../../styles/trackorder";
 import * as Animatable from "react-native-animatable";
 
 export default class Tracking extends Component {

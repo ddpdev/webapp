@@ -13,10 +13,10 @@ import {
     Dimensions,
     DeviceEventEmitter
 } from "react-native";
-import login from "./../Styles/login";
-import ButtonRoundBlue from "./../Controls/ButtonRoundBlue";
+import login from "../../styles/login";
+import ButtonRoundBlue from "../../components/common/ButtonRoundBlue";
 import {Actions} from "react-native-router-flux";
-import IconInput from "./../Controls/IconInput";
+import IconInput from "../../components/common/IconInput";
 
 export default class SignUp extends Component {
     render() {

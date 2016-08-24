@@ -8,7 +8,7 @@ export default class IconImage extends Component {
     render() {
         return (
             <TouchableOpacity onPress={this.props.action} style={css.imageIconView}>
-                <Image source={this.props.image} style={css.imageIcon} {...this.props}></Image>
+                <Image source={this.props.image} style={css.imageIconLarge} {...this.props}></Image>
             </TouchableOpacity>
         );
     }

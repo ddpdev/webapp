@@ -5,9 +5,9 @@ import {Text, View, Image, ListView, TouchableOpacity} from "react-native";
 import {Actions} from "react-native-router-flux";
 import Tracking from "./Tracking";
 import Summary from "./Summary";
-import track from "./../Styles/trackorder";
+import track from "../../styles/trackorder";
 import ScrollableTabView, {ScrollableTabBar} from "react-native-scrollable-tab-view";
-import Toolbar from "./../Controls/Toolbar";
+import Toolbar from "../../components/toolbar/Toolbar";
 
 export default class TrackOrder extends Component {
 

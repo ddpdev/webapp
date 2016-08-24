@@ -1,9 +1,9 @@
 'use strict';
 
 import React, {Component} from "react";
-import {Text, View, Dimensions, StyleSheet, PixelRatio, Image, ListView, TouchableOpacity} from "react-native";
+import {Text, View, Dimensions, StyleSheet, Animated, ScrollView, PixelRatio, Image, ListView, TouchableOpacity} from "react-native";
 import styles from "../../styles/category";
-import Parallax from "react-native-parallax";
+import Parallax from "../../components/react-native-parallax";
 
 var SCROLLVIEW_REF='ScrollView';
 var SCROLLVIEW = 'Parallax_scroll';

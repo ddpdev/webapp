@@ -18,7 +18,7 @@ export default class Home extends Component {
     render() {
         return (
             <View style={home.color}>
-                <Toolbar name='Shop' searchButton={true} layoutButton={true} gridButton={true} heartButton={true}/>
+                <Toolbar name='DDP Shop' searchButton={true} layoutButton={true} gridButton={true} heartButton={true}/>
 
                 <View style={[home.search]}>
                     <TextInput

@@ -2,11 +2,11 @@
 
 import React, { Component } from 'react';
 import {ListView, Text, View, Image, TouchableOpacity, PickerIOS, ScrollView} from 'react-native';
-import product from "./../Styles/product";
-import Toolbar from './../Controls/Toolbar';
+import product from "../../styles/product";
+import Toolbar from '../../components/toolbar/Toolbar';
 import {Actions} from 'react-native-router-flux';
-import css from "./../Styles/style";
-import AppEventEmitter from './../../Services/AppEventEmitter';
+import css from "../../styles/style";
+import AppEventEmitter from '../../utils/AppEventEmitter';
 
 export default class ProductGrid extends Component {
 	open () {
