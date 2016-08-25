@@ -6,16 +6,18 @@
     "start": "node node_modules/react-native/local-cli/cli.js start"
   },
   "dependencies": {
+    "lodash": "^4.15.0",
     "react": "15.2.1",
     "react-native": "0.31.0",
-    "react-native-drawer": "2.*",
-    "react-native-router-flux": "3.*",
-    "react-native-vector-icons": "2.*",
-    "react-native-swiper": "1.*",
-    "react-native-parallax-scroll-view": "*",
-    "react-native-modalbox": "*",
     "react-native-animatable": "*",
     "react-native-app-intro": "*",
-    "react-native-scrollable-tab-view": "0.*"
+    "react-native-drawer": "2.*",
+    "react-native-modalbox": "*",
+    "react-native-parallax-scroll-view": "*",
+    "react-native-router-flux": "3.*",
+    "react-native-scrollable-tab-view": "0.*",
+    "react-native-swiper": "1.*",
+    "react-native-vector-icons": "2.*",
+    "realm": "^0.14.3"
   }
 }
