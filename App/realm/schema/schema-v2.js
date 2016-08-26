@@ -45,6 +45,6 @@ const ItemList = {
 
 module.exports = {
   schema: [ImageInfo, ItemInfo, ItemList],
-  schemaVersion: 1,
+  schemaVersion: 2,
   migration: () => {}
 };
