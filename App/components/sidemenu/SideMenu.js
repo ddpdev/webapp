@@ -60,19 +60,28 @@ export default class SideMenu extends Component {
                     </TouchableOpacity>
 
                     <TouchableOpacity
-                        style={css.menuRow}
-                        underlayColor="#2D2D30"
-                        onPress={Actions.wooProduct}>
+                      style={css.menuRow}
+                      underlayColor="#2D2D30"
+                      onPress={Actions.wooProduct}>
                         <Text style={css.menuLink}>WOO-PRODUCT</Text>
                     </TouchableOpacity>
 
-
                     <TouchableOpacity
-                        style={[css.menuRow, css.menuSignOut]}
-                        underlayColor="#2D2D30"
-                        onPress={Actions.login}>
+                      style={[css.menuRow, css.menuSignOut]}
+                      underlayColor="#2D2D30"
+                      onPress={Actions.login}>
                         <Text style={css.menuLink}>SIGN OUT</Text>
                     </TouchableOpacity>
+
+                    <View style={css.SideMenuLine}></View>
+
+                    <TouchableOpacity
+                      style={css.menuRow}
+                      underlayColor="#2D2D30"
+                      onPress={Actions.itemList}>
+                        <Text style={css.menuLink}>ItemList</Text>
+                    </TouchableOpacity>
+
                 </ScrollView>
             </View>
         );

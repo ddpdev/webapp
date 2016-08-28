@@ -21,6 +21,8 @@ import Complete from "../order/Complete";
 import Intro from "../intro/Intro";
 import Login from "../login/Login";
 
+import ItemList from "../product/ItemList";
+
 
 export default class RootRouter extends Component {
     componentDidMount() {
@@ -70,6 +72,9 @@ export default class RootRouter extends Component {
               <Scene key="notification" component={Notification} title="Notification" />
               <Scene key="trackorder" component={TrackOrder} title="TrackOrder" />
               <Scene key="complete" component={Complete} title="Complete"/>
+
+              <Scene key="itemlist" component={ItemList} title="Item List" />
+
             </Scene>
         );
 

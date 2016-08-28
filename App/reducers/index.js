@@ -7,7 +7,7 @@
 var { combineReducers } = require('redux');
 
 module.exports = combineReducers({
-    //weather: require('./weather'),
+    itemlist: require('./ItemListReducer'),
     //location: require('./location'),
     //postcode: require('./postcode')
 });

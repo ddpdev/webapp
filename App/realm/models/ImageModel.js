@@ -21,7 +21,7 @@ export type ItemInfo = {
         item_status: string;
 };
 
-export type ItemList = {
+export type ItemListModel = {
         imageType :string;
         imageCount: number;
         data: Array<itemInfo>;

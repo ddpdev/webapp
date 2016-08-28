@@ -3,12 +3,12 @@
  */
 'use strict';
 
-// const weather = require('./weather');
+ const itemlist = require('./ItemListAction');
 // const location = require('./location');
 // const postcode = require('./postcode');
 
 module.exports = {
-    // ...weather,
+     ...itemlist,
     // ...location,
     // ...postcode
 };
