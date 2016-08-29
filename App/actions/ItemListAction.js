@@ -5,7 +5,7 @@
 
 'use strict';
 
-import type { Action } from './types';
+import type { Action } from './Types';
 
 import ItemControl from '../controller/ItemListControl';
 const service = new ItemControl();

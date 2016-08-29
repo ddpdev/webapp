@@ -3,6 +3,8 @@
 import React, {Component} from "react";
 import {Navigator, Text, View, Alert} from "react-native";
 import {Scene, Router, Schema, Actions, Animations, TabBar} from "react-native-router-flux";
+import { connect } from 'react-redux';
+
 import Drawer from "react-native-drawer";
 
 import AppEventEmitter from "../../utils/AppEventEmitter";
@@ -14,18 +16,23 @@ import ProductGrid from "../product/ProductGrid";
 import Cart from "../customer/Cart";
 import WishList from "../customer/WishList";
 import MyOrder from "../customer/MyOrder";
-import Profile from "../customer/Profile";
+import Profile from "../customer/Profile.android";
 import Notification from "../customer/Notification";
 import TrackOrder from "../order/TrackOrder";
 import Complete from "../order/Complete";
-import Intro from "../intro/Intro";
-import Login from "../login/Login";
+import Intro from "../intro/Intro.android";
+import Login from "../login/Login.android";
 
-import ItemList from "../product/ItemList";
+//import ItemList from "../product/ItemList";
 
+//type Props = {};
 
-export default class RootRouter extends Component {
-    componentDidMount() {
+class RootRouter extends Component {
+  // constructor(props: Props) {
+  //   super(props);
+  // }
+
+  componentDidMount() {
         AppEventEmitter.addListener('hamburger.click', this.openSideMenu.bind(this));
     }
 
@@ -61,7 +68,7 @@ export default class RootRouter extends Component {
             <Scene key="scene">
               <Scene key="intro" component={Intro} />
               <Scene key="login" component={Login}/>
-              <Scene key="home" component={Home} title="Home"  initial={true}  />
+              <Scene key="home" component={Home} title="Home" initial={true}  />
               <Scene key="product" component={Product} title="Product"    />
               <Scene key="productgrid" component={ProductGrid} title="ProductGrid" />
               <Scene key="productdetails"  component={ProductDetails} title="ProductDetails"  />
@@ -73,7 +80,7 @@ export default class RootRouter extends Component {
               <Scene key="trackorder" component={TrackOrder} title="TrackOrder" />
               <Scene key="complete" component={Complete} title="Complete"/>
 
-              <Scene key="itemlist" component={ItemList} title="Item List" />
+
 
             </Scene>
         );
@@ -93,3 +100,5 @@ export default class RootRouter extends Component {
         );
     }
 }
+
+export default connect(({routes}) => ({routes}))(RootRouter);

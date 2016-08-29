@@ -4,10 +4,11 @@
 
 'use strict';
 
-var { combineReducers } = require('redux');
+import { combineReducers }  from 'redux';
+import routes  from './Routes';
+import itemlist  from './ItemListReducer';
 
 module.exports = combineReducers({
-    itemlist: require('./ItemListReducer'),
-    //location: require('./location'),
-    //postcode: require('./postcode')
+    routes,
+    itemlist,
 });

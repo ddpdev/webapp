@@ -3,24 +3,40 @@
  */
 
 'use strict';
-
-import React, { Component } from 'react';
+import { Router } from 'react-native-router-flux';
 import { Provider } from 'react-redux';
+import { connect } from 'react-redux';
+import React, { Component } from 'react';
+
+const RouterWithRedux = connect()(Router);
+
 import App from './containers/root/RootRouter';
 
 import configureRealm from './realm/DBConfigure';
 import configureStore from './store/configure';
-import { setWeatherLoading, initaliseLocations } from './actions';
 
-type State = {
-    store: any;
-};
+import { setItemListLoading } from './actions';
 
-function setup() {
+// type State = {
+//     store: any;
+// };
 
-    class Root extends Component {
-        state: State;
-
+// function setup() {
+//
+//     class Root extends Component {
+//         state: State;
+//
+//         constructor() {
+//             super();
+//             configureRealm();
+//
+//             this.state = {
+//                 store: configureStore()
+//             };
+//
+//             this.state.store.dispatch(setItemListLoading());
+//         }
+class Setup extends React.Component {
         constructor() {
             super();
             configureRealm();
@@ -28,28 +44,23 @@ function setup() {
             this.state = {
                 store: configureStore()
             };
-
-            this.state.store.dispatch(setWeatherLoading());
-            this.state.store.dispatch(initaliseLocations());
         }
-
         render() {
             return (
                 <Provider store={this.state.store}>
+                    <RouterWithRedux>
                     <App />
+                    </RouterWithRedux>
                 </Provider>
             );
         }
-    }
-
-    return Root;
 }
 
-global.log = (...args) => {
-    console.log('------------------------------');
-    console.log(...args);
-    console.log('------------------------------');
-    return args[args.length - 1];
-};
+// global.log = (...args) => {
+//     console.log('------------------------------');
+//     console.log(...args);
+//     console.log('------------------------------');
+//     return args[args.length - 1];
+// };
 
-module.exports = setup;
+export default Setup;

@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import {Text, View, Platform, Image, ScrollView, BackAndroid, TouchableOpacity, TextInput} from "react-native";
+import { connect } from 'react-redux';
 
 import ListItem from "../../components/Layout/ListItem";
 import HorizontalItem from "../../components/Layout/HorizontalItem";
@@ -9,9 +10,9 @@ import {Actions} from "react-native-router-flux";
 import AppEventEmitter from "./../../utils/AppEventEmitter";
 import Icon from "react-native-vector-icons/EvilIcons";
 import home from "../../styles/home";
-import Toolbar from "../../components/toolbar/Toolbar";
+import Toolbar from "../../components/toolbar/Toolbar.android";
 
-export default class Home extends Component {
+class Home extends Component {
     open() {
         AppEventEmitter.emit('hamburger.click'); //icon
     }
@@ -52,3 +53,5 @@ export default class Home extends Component {
         );
     }
 }
+
+export default connect(({routes}) => ({routes}))(Home);
