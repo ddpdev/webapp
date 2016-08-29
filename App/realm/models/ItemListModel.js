@@ -14,15 +14,15 @@ export type ImageInfo = {
 };
 
 export type ItemInfo = {
-        item_id: string;
-        item_type: string;
-        last_date: Date;
-        item_value: ImageInfo;
-        item_status: string;
+        itemid: number;
+        itemtype: string;
+        lastdate: Date;
+        itemvalue: ImageInfo;
+        itemstatus: string;
 };
 
 export type ItemListModel = {
-        imageType :string;
-        imageCount: number;
-        data: Array<itemInfo>;
+        imagetype :string;
+        imagecount: number;
+        iteminfo: Array<ItemInfo>;
 };

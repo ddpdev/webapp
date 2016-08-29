@@ -21,10 +21,10 @@ const ItemInfo = {
   name: 'ItemInfo',
   primaryKey: 'item_id',
   properties: {
-    item_id: 'string',
-    item_type: 'string',
-    last_date: 'date',
-    item_value: {
+    itemid: 'int',
+    itemtype: 'string',
+    lastdate: 'date',
+    itemvalue: {
       type:'ImageInfo'
     },
     item_status: 'string'
@@ -34,11 +34,11 @@ const ItemInfo = {
 const ItemList = {
   name: 'ItemList',
   properties: {
-    imageType :'string',
-    imageCount: 'int',
-    data: {
+    imagetype :'string',
+    imagecount: 'int',
+    iteminfo: {
       type: 'list',
-      objectType: 'itemInfo'
+      objectType: 'ItemInfo'
     }
   }
 };

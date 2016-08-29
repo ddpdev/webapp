@@ -7,7 +7,7 @@
 
 import realm from '../realm';
 import { imageApiUrl, isDebugData } from './ServerConfig';
-import type { ItemListModel, ImageInfo, ItemInfo } from '../realm/models/ImageModel';
+import type { ItemListModel, ImageInfo, ItemInfo } from '../realm/models/ItemListModel';
 
 import dateFormat from 'dateformat';
 
@@ -23,10 +23,10 @@ class ItemListControl {
         var data = [];
         let context = realm.current();
         try {
-            let ItemLists = context.objects('ItemListModel');
+            let ItemList = context.objects('ItemListModel');
 
-            for (var i = 0; i < ItemLists.length; i++) {
-                var ItemList = ItemLists[i].data;
+            // for (var i = 0; i < ItemLists.length; i++) {
+            //     var ItemList = ItemLists[i].data;
 
                 var result;
                 if (forceUpdate === false ) {
@@ -37,7 +37,7 @@ class ItemListControl {
                 }
 
                 data.push(result);
-            }
+            // }
         } finally {
             context.close();
         }
@@ -47,49 +47,57 @@ class ItemListControl {
 
     getItemListFromContext(ItemList: any) {
         return {
-            item_id: ItemList.item_id,
-            item_type: ItemList.item_type,
-            item_date: ItemList.item_date,
-            item_value: ItemList.item_value.map((item) => {
-                  return {
-                      bucket: item.bucket,
-                      uploadfilename: item.uploadfilename,
-                      filesize: item.filesize,
-                      imagefilename: item.imagefilename,
-                      imagekey: item.imagekey,
-                      thumbfilename: item.thumbfilename,
-                      thumbkey: item.thumbkey,
-                  }
-              }),
-            item_status: ItemList.item_status,
-        }
+            imagetype : ItemList.imagetype,
+            imagecount: ItemList.imagecount ,
+            iteminfo : ItemList.ItemInfo.map((item) => {
+                return {
+                    itemid: item.itemid,
+                    itemtype: item.itemtype ,
+                    itemdate: item.itemdate,
+                    itemvalue:  {
+                        bucket: item.itemvalue.bucket,
+                        uploadfilename: item.itemvalue.uploadfilename,
+                        filesize: item.itemvalue.filesize ,
+                        imagefilename: item.itemvalue.imagefilename,
+                        imagekey: item.itemvalue.imagekey ,
+                        thumbfilename: item.itemvalue.thumbfilename,
+                        thumbkey: item.itemvalue.thumbkey
+                    }
+                }
+            }),
+            item_status: ItemList.item_status
+       }
     }
 
-    updateItemListInContext(ListItem: any, result: any, context: any) {
+    updateItemListInContext(ItemList: any, result: any, context: any) {
         context.write(() => {
-            location.weather = {
-                freshness: weather.freshness,
-                observation: {
-                    forecast: weather.observation.forecast,
-                    feelsLike: weather.observation.feelsLike.toString(),
-                    current: weather.observation.current.toString(),
-                    low: weather.observation.low.toString(),
-                    high: weather.observation.high.toString(),
-                    icon: weather.observation.icon
+            ItemList  = {
+                imagetype : result.imagetype.toString() ,
+                imagecount: result.imagecount.toNumber() ,
+                iteminfo: {
+                    iteminfo: result.iteminfo
                 }
             }
 
-            while(location.weather.forecast.length > 0) {
-                location.weather.forecast.pop();
+            while(ItemList.ItemInfo.length > 0) {
+                ItemList.ItemInfo.pop();
             }
 
-            weather.forecast.forEach((item) => {
-                location.weather.forecast.push({
-                    day: item.day,
-                    forecast: item.forecast,
-                    low: item.low.toString(),
-                    high: item.high.toString(),
-                    icon: item.icon
+            result.ItemInfo.forEach((item) => {
+                ItemList.iteminfo.push({
+                    itemid: item.itemid.toNumber(),
+                    itemtype: item.itemtype.toString(),
+                    lastdate: item.lastdate.toDateString(),
+                    itemvalue: {
+                        bucket: item.itemvalue.bucket,
+                        uploadfilename: item.itemvalue.uploadfilename.toString(),
+                        filesize: item.itemvalue.filesize.toNumber(),
+                        imagefilename: item.itemvalue.imagefilename.toString(),
+                        imagekey: item.itemvalue.imagekey.toString(),
+                        thumbfilename: item.itemvalue.thumbfilename.toString(),
+                        thumbfilekey: item.itemvalue.thumbfilekey.toString(),
+                    },
+                    itemstatus: item.itemstatus.toString()
                 })
             });
         });

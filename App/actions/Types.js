@@ -3,7 +3,7 @@
  */
 'use strict';
 
-import type { ItemListModel, ItemInfo, ImageInfo } from '../realm/models/ImageModel';
+import type { ItemListModel, ItemInfo, ImageInfo } from '../realm/models/ItemListModel';
 
 export type Action =
   { type: 'ITEMLIST_SET_LOADING' }

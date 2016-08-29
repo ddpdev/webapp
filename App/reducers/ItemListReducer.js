@@ -6,7 +6,7 @@
 'use strict';
 
 import type { Action } from '../actions/types';
-import type { ItemListModel } from '../realm/models/ImageModel';
+import type { ItemListModel } from '../realm/models/ItemListModel';
 
 export type State = {
   isLoading: bool;

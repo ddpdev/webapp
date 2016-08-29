@@ -5,7 +5,7 @@
 'use strict';
 
 import Realm from 'realm';
-import Schema from './schema';
+import Schema from './schema/schema';
 
 function getCurrent() {
   var schema = new Schema();
