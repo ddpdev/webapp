@@ -20,4 +20,4 @@ class DDPStyle extends Component {
   }
 }
 
-AppRegistry.registerComponent('ddpapp40', () => DDPStyle);
+AppRegistry.registerComponent('ddpapp40', () => Setup);

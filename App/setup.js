@@ -4,8 +4,7 @@
 
 'use strict';
 import { Scene, Router, Actions } from 'react-native-router-flux';
-import { Provider } from 'react-redux';
-import { connect } from 'react-redux';
+import { Provider, connect } from 'react-redux';
 import React, { Component } from 'react';
 
 const RouterWithRedux = connect()(Router);
@@ -34,23 +33,26 @@ import Intro from "./containers/intro/Intro.android";
 import Login from "./containers/login/Login.android";
 
 //import ItemList from "../product/ItemList";
+type State = {
+  //isLoading: boolean;
+  store: any;
+};
+console.log("setup");
 
 function setup() {
-    state = {
-        isLoading: boolean;
-        store: any;
-    };
+
 
     class Root extends Component {
+        state: State;
 
         constructor() {
             super();
-            this.state = {
-                isLoading: true,
-                store: configureStore(() => this.setState({isLoading: false})),
-            };
             configureRealm();
 
+            this.state = {
+                //isLoading: true,
+                store: configureStore()
+            };
             this.state.store.dispatch(setItemListLoading());
         }
 

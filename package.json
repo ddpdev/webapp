@@ -8,6 +8,7 @@
   "dependencies": {
     "axios": "^0.13.1",
     "lodash": "^4.15.0",
+    "querystring": "^0.2.0",
     "react": "15.2.1",
     "react-native": "0.31.0",
     "react-native-animatable": "*",
