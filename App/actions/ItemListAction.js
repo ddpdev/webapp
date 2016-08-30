@@ -7,7 +7,7 @@
 
 import type { Action } from './Types';
 
-import ItemControl from '../controller/ItemListControl';
+import ItemControl from '../services/ItemListService';
 const service = new ItemControl();
 
 const maxAgeInSeconds = (10 * 60); // 10 minutes

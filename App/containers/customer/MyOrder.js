@@ -137,7 +137,6 @@ export default class MyOrder extends Component {
                     </View>
                 </ScrollView>
             </View>
-        )
-            ;
+        );
     }
 }

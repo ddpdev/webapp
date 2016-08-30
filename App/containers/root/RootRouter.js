@@ -79,12 +79,8 @@ class RootRouter extends Component {
               <Scene key="notification" component={Notification} title="Notification" />
               <Scene key="trackorder" component={TrackOrder} title="TrackOrder" />
               <Scene key="complete" component={Complete} title="Complete"/>
-
-
-
             </Scene>
         );
-
         return (
             <Drawer
                 ref="drawer"
@@ -94,7 +90,6 @@ class RootRouter extends Component {
                 panCloseMask={0.2}
                 openDrawerOffset={0.2}
                 content={<SideMenu />}>
-
                 <Router hideNavBar={true} dispatch={this.closeSideMenu.bind(this)} scenes={scenes} onExitApp={this._onExitApp} onBackAndroid={this._onBackAndroid}/>
             </Drawer>
         );
